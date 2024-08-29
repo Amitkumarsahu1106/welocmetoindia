@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,14 @@
     #visualization {
       border: 1px solid #ccc;
     }
+
+    .tooltip-image {
+      width: 100px;
+      height: auto;
+    }
   </style>
 </head>
+
 <body>
   <main id="main">
     <div align="center">
@@ -21,51 +28,53 @@
       google.charts.setOnLoadCallback(drawVisualization);
 
       function drawVisualization() {
-        var data = google.visualization.arrayToDataTable([
+        const data = google.visualization.arrayToDataTable([
           ['State Code', 'State', 'AQI PM2.5', { role: 'tooltip' }],
-          ['IN-UP', 'Uttar Pradesh', 780, 'Uttar Pradesh<br>AQI: 780'],
-          ['IN-MH', 'Maharashtra', 920, 'Maharashtra<br>AQI: 920'],
-          ['IN-BR', 'Bihar', 510, 'Bihar<br>AQI: 510'],
-          ['IN-WB', 'West Bengal', 620, 'West Bengal<br>AQI: 620'],
-          ['IN-MP', 'Madhya Pradesh', 700, 'Madhya Pradesh<br>AQI: 700'],
-          ['IN-TN', 'Tamil Nadu', 930, 'Tamil Nadu<br>AQI: 930'],
-          ['IN-RJ', 'Rajasthan', 1030, 'Rajasthan<br>AQI: 1030'],
-          ['IN-KA', 'Karnataka', 1290, 'Karnataka<br>AQI: 1290'],
-          ['IN-GJ', 'Gujarat', 1304, 'Gujarat<br>AQI: 1304'],
-          ['IN-AP', 'Andhra Pradesh', 320, 'Andhra Pradesh<br>AQI: 320'],
-          ['IN-OR', 'Odisha', 133, 'Odisha<br>AQI: 133'],
-          ['IN-TG', 'Telangana', 233, 'Telangana<br>AQI: 233'],
-          ['IN-KL', 'Kerala', 311, 'Kerala<br>AQI: 311'],
-          ['IN-JH', 'Jharkhand', 290, 'Jharkhand<br>AQI: 290'],
-          ['IN-AS', 'Assam', 280, 'Assam<br>AQI: 280'],
-          ['IN-PB', 'Punjab', 300, 'Punjab<br>AQI: 300'],
-          ['IN-CT', 'Chhattisgarh', 330, 'Chhattisgarh<br>AQI: 330'],
-          ['IN-HR', 'Haryana', 300, 'Haryana<br>AQI: 300'],
-          ['IN-JK', 'Jammu and Kashmir', 200, 'Jammu and Kashmir<br>AQI: 200'],
-          ['IN-UT', 'Uttarakhand', 208, 'Uttarakhand<br>AQI: 208'],
-          ['IN-HP', 'Himachal Pradesh', 107, 'Himachal Pradesh<br>AQI: 107'],
-          ['IN-TR', 'Tripura', 301, 'Tripura<br>AQI: 301'],
-          ['IN-ML', 'Meghalaya', 210, 'Meghalaya<br>AQI: 210'],
-          ['IN-MN', 'Manipur', 220, 'Manipur<br>AQI: 220'],
-          ['IN-NL', 'Nagaland', 201, 'Nagaland<br>AQI: 201'],
-          ['IN-GA', 'Goa', 1121, 'Goa<br>AQI: 1121'],
-          ['IN-AR', 'Arunachal Pradesh', 343, 'Arunachal Pradesh<br>AQI: 343'],
-          ['IN-MZ', 'Mizoram', 423, 'Mizoram<br>AQI: 423'],
-          ['IN-SK', 'Sikkim', 724, 'Sikkim<br>AQI: 724'],
-          ['IN-DL', 'Delhi', 231, 'Delhi<br>AQI: 231'],
-          ['IN-PY', 'Puducherry', 233, 'Puducherry<br>AQI: 233'],
-          ['IN-CH', 'Chandigarh', 230, 'Chandigarh<br>AQI: 230'],
-          ['IN-AN', 'Andaman and Nicobar Islands', 230, 'Andaman and Nicobar Islands<br>AQI: 230'],
-          ['IN-DN', 'Dadra and Nagar Haveli', 230, 'Dadra and Nagar Haveli<br>AQI: 230'],
-          ['IN-DD', 'Daman and Diu', 229, 'Daman and Diu<br>AQI: 229'],
-          ['IN-LD', 'Lakshadweep', 231, 'Lakshadweep<br>AQI: 231'],
+          ...[
+            ['IN-UP', 'Uttar Pradesh', 780],
+            ['IN-MH', 'Maharashtra', 920],
+            ['IN-BR', 'Bihar', 510],
+            ['IN-WB', 'West Bengal', 620],
+            ['IN-MP', 'Madhya Pradesh', 700],
+            ['IN-TN', 'Tamil Nadu', 930],
+            ['IN-RJ', 'Rajasthan', 1030],
+            ['IN-KA', 'Karnataka', 1290],
+            ['IN-GJ', 'Gujarat', 1304],
+            ['IN-AP', 'Andhra Pradesh', 320],
+            ['IN-OR', 'Odisha', 133],
+            ['IN-TG', 'Telangana', 233],
+            ['IN-KL', 'Kerala', 311],
+            ['IN-JH', 'Jharkhand', 290],
+            ['IN-AS', 'Assam', 280],
+            ['IN-PB', 'Punjab', 300],
+            ['IN-CT', 'Chhattisgarh', 330],
+            ['IN-HR', 'Haryana', 300],
+            ['IN-JK', 'Jammu and Kashmir', 200],
+            ['IN-UT', 'Uttarakhand', 208],
+            ['IN-HP', 'Himachal Pradesh', 107],
+            ['IN-TR', 'Tripura', 301],
+            ['IN-ML', 'Meghalaya', 210],
+            ['IN-MN', 'Manipur', 220],
+            ['IN-NL', 'Nagaland', 201],
+            ['IN-GA', 'Goa', 1121],
+            ['IN-AR', 'Arunachal Pradesh', 343],
+            ['IN-MZ', 'Mizoram', 423],
+            ['IN-SK', 'Sikkim', 724],
+            ['IN-DL', 'Delhi', 231],
+            ['IN-PY', 'Puducherry', 233],
+            ['IN-CH', 'Chandigarh', 230],
+            ['IN-AN', 'Andaman and Nicobar Islands', 230],
+            ['IN-DN', 'Dadra and Nagar Haveli', 230],
+            ['IN-DD', 'Daman and Diu', 229],
+            ['IN-LD', 'Lakshadweep', 231]
+          ].map(([code, state, aqi]) => [code, state, aqi, `<img src="images/${code.split('-')[1].toLowerCase()}.png" class="tooltip-image" alt="${state}"><br>${state}<br>AQI: ${aqi}`])
         ]);
 
-        var opts = {
+        const options = {
           region: 'IN',
           domain: 'IN',
           displayMode: 'regions',
-          colorAxis: { colors: ['#008000', '#FFFF00', '#FF0000'] },
+          colorAxis: { colors: ['#008000', '#FFFF00', '#0000FF'] },
           resolution: 'provinces',
           backgroundColor: '#81d4fa',
           defaultColor: '#f5f5f5',
@@ -73,32 +82,60 @@
           height: 680,
         };
 
-        var geochart = new google.visualization.GeoChart(
-          document.getElementById('visualization')
-        );
+        const geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
 
-        // Add event listener for clicks
         google.visualization.events.addListener(geochart, 'regionClick', function (event) {
-          var stateCode = event.region;
-
-          // Define URLs for each state
-          var urls = {
-            'IN-UP': 'uttar-pradesh.html',
-            'IN-MH': 'maharashtra.html',
-            // Add other state URLs similarly
-          };
-
-          // Redirect to the appropriate page
-          if (urls[stateCode]) {
-            window.location.href = urls[stateCode];
-          } else {
-            alert('No page available for this state.');
-          }
+          const stateUrl = getStateUrl(event.region);
+          if (stateUrl) window.location.href = stateUrl;
         });
 
-        geochart.draw(data, opts);
+        geochart.draw(data, options);
+      }
+
+      function getStateUrl(stateCode) {
+        const baseUrl = './popular_places/';
+        const stateUrls = {
+          'IN-UP': 'uttar-pradesh.html',
+          'IN-MH': 'maharashtra.html',
+          'IN-BR': 'bihar.html',
+          'IN-WB': 'west-bengal.html',
+          'IN-MP': 'madhya-pradesh.html',
+          'IN-TN': 'tamil-nadu.html',
+          'IN-RJ': 'rajasthan.html',
+          'IN-KA': 'karnataka.html',
+          'IN-GJ': 'gujarat.html',
+          'IN-AP': 'andhra-pradesh.html',
+          'IN-OR': 'odisha.html',
+          'IN-TG': 'telangana.html',
+          'IN-KL': 'kerala.html',
+          'IN-JH': 'jharkhand.html',
+          'IN-AS': 'assam.html',
+          'IN-PB': 'punjab.html',
+          'IN-CT': 'chhattisgarh.html',
+          'IN-HR': 'haryana.html',
+          'IN-JK': 'jammu-kashmir.html',
+          'IN-UT': 'uttarakhand.html',
+          'IN-HP': 'himachal-pradesh.html',
+          'IN-TR': 'tripura.html',
+          'IN-ML': 'meghalaya.html',
+          'IN-MN': 'manipur.html',
+          'IN-NL': 'nagaland.html',
+          'IN-GA': 'goa.html',
+          'IN-AR': 'arunachal-pradesh.html',
+          'IN-MZ': 'mizoram.html',
+          'IN-SK': 'sikkim.html',
+          'IN-DL': 'delhi.html',
+          'IN-PY': 'puducherry.html',
+          'IN-CH': 'chandigarh.html',
+          'IN-AN': 'andaman-nicobar.html',
+          'IN-DN': 'dadra-nagar-haveli.html',
+          'IN-DD': 'daman-diu.html',
+          'IN-LD': 'lakshadweep.html'
+        };
+        return baseUrl + (stateUrls[stateCode] || '');
       }
     </script>
   </main>
 </body>
+
 </html>

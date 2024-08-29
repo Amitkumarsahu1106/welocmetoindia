@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit India</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      text-align: center;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
+    header:hover {
+      background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      margin: 0 10px; /* Reduced margin to fit better */
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      padding: 5px 10px; /* Added padding for better click area */
+      transition: color 0.3s ease; /* Smooth transition for text color */
+    }
+    nav ul li a:hover {
+      color: #ffeb3b; /* Color change on hover */
+      background-color: rgba(255, 255, 255, 0.3); /* Light hover effect */
+      border-radius: 4px;
+    }
+    .content {
+      padding: 80px 20px; /* Adjusted padding to account for fixed header */
+      color: #fff;
+      z-index: 1;
+      position: relative;
+    }
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://static.toiimg.com/thumb/msid-92089121,width-748,height-499,resizemode=4,imgsize-139308/.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(50%) blur(6px);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Visit India</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="background"></div>
+  <div class="content">
+    <h2>Welcome to the Visit India Homepage</h2>
+    <p>Discover the rich culture, history, and beauty of India.</p>
+  </div>
+</body>
+</html>

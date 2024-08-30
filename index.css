@@ -148,16 +148,7 @@ body {
     max-height: 200px;
     overflow-y: auto;
     z-index: 2000;
-    /* position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 2000; */
+
   }
   .suggestion-item {
     padding: 10px;
@@ -190,6 +181,27 @@ body {
     padding: 30px;
     padding-top: 15%;
   }
+
+
+  .discover{
+    position: absolute;
+    padding: 2%;
+    background-color: #5a584d;
+  }
+
+
+  .discover h4{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #25bf20;
+    text-decoration: underline;
+  }
+
+  .discover p{
+    text-align: left;
+  }
+
   @media (max-width: 768px) {
     nav ul {
       display: none; /* Hide the default nav links on small screens */
@@ -209,3 +221,4 @@ body {
       width: 150px;
     }
   }
+

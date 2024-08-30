@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visit India</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./visit-india/public/index.css">
 </head>
 
 <body>
@@ -20,16 +20,16 @@
     <nav>
       <ul style="padding-right: 20px;">
         <li><a href="#home">Home</a></li>
-        <li><a href="./about-us.html">About Us</a></li>
-        <li><a href="./login.html">Login</a></li>
-        <li><a href="./map.html">Map</a></li>
+        <li><a href="./visit-india/public/about-us.html">About Us</a></li>
+        <li><a href="./visit-india/public/login.html">Login</a></li>
+        <li><a href="./visit-india/public/map.html">Map</a></li>
       </ul>
     </nav>
     <div class="dropdown-menu" id="dropdownMenu">
       <a href="#home">Home</a>
-      <a href="./about-us.html">About Us</a>
-      <a href="./login.html">Login</a>
-      <a href="./map.html">Map</a>
+      <a href="./visit-india/public/about-us.html">About Us</a>
+      <a href="./visit-india/public/login.html">Login</a>
+      <a href="./visit-india/public/map.html">Map</a>
     </div>
   </header>
   <div class="background"></div>
@@ -39,63 +39,65 @@
       <p>Discover the rich culture, history, and beauty of India.</p>
     </div>
     <div>
+      <form id="searchForm" onsubmit="searchState(); return false;">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search for a state..." onkeyup="showSuggestions()">
+          <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.67 16 10.5c0-2.21-1.79-4-4-4S8 8.29 8 10.5c0 1.17.59 2.09 1.41 2.72l.27.28h.79l5 4.99L20.49 19l-4.99-5zm-6 0C7 14 5 12 5 10.5S7 7 9.5 7 14 8.29 14 10.5 12 14 9.5 14z" />
+          </svg></button>
+        </div>
+      </form>
       <div class="suggestions" id="suggestions"></div>
-      <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Search for a state..." onkeyup="showSuggestions()">
-      <button onclick="searchState()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.67 16 10.5c0-2.21-1.79-4-4-4S8 8.29 8 10.5c0 1.17.59 2.09 1.41 2.72l.27.28h.79l5 4.99L20.49 19l-4.99-5zm-6 0C7 14 5 12 5 10.5S7 7 9.5 7 14 8.29 14 10.5 12 14 9.5 14z" />
-     </svg></button>
-    </div>
     </div>
   </div>
 
-  <section class="discover" id="home" >
+  <section class="discover" id="home">
     <div>
-    <h4>About Visit India</h4>
-    <p>
-      Welcome to "Visit India," your ultimate guide to exploring the rich cultural heritage, diverse traditions, and
-      culinary delights of India. Our website is dedicated to providing comprehensive information about the vibrant
-      cultures, traditional food items, and the best accommodations available across this incredible country. Whether
-      you're a traveler planning your next adventure, a food enthusiast eager to explore regional cuisines, or simply
-      curious about India's diverse traditions, "Visit India" is your go-to resource.
-    </p>
-    <br><br><br>
-    <h4>Discover India’s Cultural Tapestry</h4>
-    <p>
-      India is a land of incredible diversity, with each state offering its unique blend of languages, customs,
-      festivals, and art forms. From the colorful festivals of Rajasthan to the classical dance forms of Kerala, our
-      website offers detailed insights into the various cultural practices that make India a mosaic of traditions. We
-      provide in-depth articles, videos, and photo galleries that explore everything from the ancient practices of yoga
-      and meditation to the contemporary art and music scenes thriving in urban centers.
-    </p>
-    <p>
-      Our platform is designed to help you navigate through the rich cultural landscapes of India. Whether you're
-      interested in the intricate handlooms of Varanasi, the tribal art of Madhya Pradesh, or the spiritual rituals of
-      Varanasi, we have curated content that captures the essence of India’s cultural diversity. Additionally, our
-      culture section includes information on regional festivals, traditional attire, and the history behind India’s
-      many monuments and heritage sites.
-    </p>
-    <br><br><br>
-    <h4>Savor the Flavors of India</h4>
-    <p>
-      India’s cuisine is as diverse as its culture, with each region offering a unique culinary experience. "Visit
-      India" takes you on a gastronomic journey through the country, showcasing traditional food items that have been
-      passed down through generations. From the spicy street food of Mumbai to the royal dishes of Lucknow, we cover a
-      wide range of culinary delights that cater to every palate. Our food section features authentic recipes,
-      restaurant recommendations, and stories behind India’s famous dishes. Whether you're a fan of the fiery curries of
-      the South or the sweet treats of the North, our website has something for every food lover.
-    </p>
-    <p>
-      We also provide information on food festivals, local eateries, and gourmet experiences that allow you to indulge
-      in the flavors of India. Our goal is to help you discover the hidden gems of Indian cuisine and experience the
-      true taste of the country. Additionally, we highlight the best places to stay, from luxury hotels to
-      budget-friendly accommodations, ensuring that you have a comfortable and memorable stay in India.
-    </p>
-    <br><br><br>
+      <h4>About Visit India</h4>
+      <p>
+        Welcome to "Visit India," your ultimate guide to exploring the rich cultural heritage, diverse traditions, and
+        culinary delights of India. Our website is dedicated to providing comprehensive information about the vibrant
+        cultures, traditional food items, and the best accommodations available across this incredible country. Whether
+        you're a traveler planning your next adventure, a food enthusiast eager to explore regional cuisines, or simply
+        curious about India's diverse traditions, "Visit India" is your go-to resource.
+      </p>
+      <br><br><br>
+      <h4>Discover India’s Cultural Tapestry</h4>
+      <p>
+        India is a land of incredible diversity, with each state offering its unique blend of languages, customs,
+        festivals, and art forms. From the colorful festivals of Rajasthan to the classical dance forms of Kerala, our
+        website offers detailed insights into the various cultural practices that make India a mosaic of traditions. We
+        provide in-depth articles, videos, and photo galleries that explore everything from the ancient practices of yoga
+        and meditation to the contemporary art and music scenes thriving in urban centers.
+      </p>
+      <p>
+        Our platform is designed to help you navigate through the rich cultural landscapes of India. Whether you're
+        interested in the intricate handlooms of Varanasi, the tribal art of Madhya Pradesh, or the spiritual rituals of
+        Varanasi, we have curated content that captures the essence of India’s cultural diversity. Additionally, our
+        culture section includes information on regional festivals, traditional attire, and the history behind India’s
+        many monuments and heritage sites.
+      </p>
+      <br><br><br>
+      <h4>Savor the Flavors of India</h4>
+      <p>
+        India’s cuisine is as diverse as its culture, with each region offering a unique culinary experience. "Visit
+        India" takes you on a gastronomic journey through the country, showcasing traditional food items that have been
+        passed down through generations. From the spicy street food of Mumbai to the royal dishes of Lucknow, we cover a
+        wide range of culinary delights that cater to every palate. Our food section features authentic recipes,
+        restaurant recommendations, and stories behind India’s famous dishes. Whether you're a fan of the fiery curries of
+        the South or the sweet treats of the North, our website has something for every food lover.
+      </p>
+      <p>
+        We also provide information on food festivals, local eateries, and gourmet experiences that allow you to indulge
+        in the flavors of India. Our goal is to help you discover the hidden gems of Indian cuisine and experience the
+        true taste of the country. Additionally, we highlight the best places to stay, from luxury hotels to
+        budget-friendly accommodations, ensuring that you have a comfortable and memorable stay in India.
+      </p>
+      <br><br><br>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <script src="./visit-india/public/script.js"></script>
 </body>
 
 </html>

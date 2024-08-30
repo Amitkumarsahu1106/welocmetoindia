@@ -96,3 +96,61 @@ document.querySelectorAll('.dropdown-menu a').forEach(link => {
     dropdownMenu.classList.remove('show');
   });
 });
+
+// Add event listener for the state dropdown menu
+document.getElementById('state-select').addEventListener('change', function() {
+  const selectedState = this.value.toLowerCase();
+  const url = stateUrls[selectedState];
+  if (url) {
+    window.location.href = url;
+  }
+});
+
+// Populate the dropdown menu
+const states = [
+  "Andaman and Nicobar Islands",
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chandigarh",
+  "Chhattisgarh",
+  "Dadra and Nagar Haveli",
+  "Daman and Diu",
+  "Delhi",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jammu and Kashmir",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Lakshadweep",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Puducherry",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal"
+];
+
+const selectElement = document.getElementById("state-select");
+
+states.forEach((state) => {
+  const optionElement = document.createElement("option");
+  optionElement.value = state.toLowerCase(); // Ensure value is in lowercase
+  optionElement.textContent = state;
+  selectElement.appendChild(optionElement);
+});

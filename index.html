@@ -1,190 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visit India</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-      color: #fff;
-      text-align: center;
-      background-image: linear-gradient(to right , #cb2d3e , #ef473a);
-    }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      transition: background-color 0.3s;
-    }
-    header:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5em;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-    }
-    nav ul li {
-      margin: 0 10px;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #ffdd57;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      margin-left: 20px;
-    }
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: #fff;
-      margin: 3px 0;
-      transition: 0.3s;
-    }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      width: 200px;
-    }
-    .dropdown-menu a {
-      display: block;
-      padding: 10px 20px;
-      color: #fff;
-    }
-    .dropdown-menu a:hover {
-      background: #ffdd57;
-    }
-    .dropdown-menu.show {
-      display: block;
-    }
-    .search-container {
-      position: relative;
-      display: flex;
-      align-items: center;
-      margin-left: auto;
-      margin-right: 20px;
-    }
-    .search-container input[type="text"] {
-      padding: 5px;
-      font-size: 1em;
-      border-radius: 50px;
-      border: none;
-      outline: none;
-      width: 150px;
-      transition: width 0.3s;
-    }
-    .search-container button {
-      padding: 5px 8px;
-      font-size: 1em;
-      border: none;
-      border-radius: 50px;
-      background-color: #ffdd57;
-      color: #000;
-      cursor: pointer;
-      margin-left: 5px;
-    }
-    .search-container button:hover {
-      background-color: #ffc107;
-    }
-    .suggestions {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      max-height: 200px;
-      overflow-y: auto;
-      z-index: 2000;
-    }
-    .suggestion-item {
-      padding: 10px;
-      color: #fff;
-      text-align: left;
-      cursor: pointer;
-    }
-    .suggestion-item:hover {
-      background: #ffdd57;
-    }
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://static.toiimg.com/thumb/msid-92089121,width-748,height-499,resizemode=4,imgsize-139308/.jpg') no-repeat center center/cover;
-      filter: blur(6px) brightness(0.6);
-      z-index: -1;
-    }
-    .content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      padding: 20px;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        display: none; /* Hide the default nav links on small screens */
-      }
-      .hamburger {
-        display: flex; /* Show hamburger menu */
-      }
-      .search-container {
-        margin-right: 10px;
-      }
-    }
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.2em;
-      }
-      .search-container input[type="text"] {
-        width: 150px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
   <header>
     <h1>Visit India</h1>
-    <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Search for a state..." onkeyup="showSuggestions()">
-      <button onclick="searchState()">Search</button>
-      <div class="suggestions" id="suggestions"></div>
-    </div>
+    
     <div class="hamburger" id="hamburger">
       <div></div>
       <div></div>
@@ -208,85 +35,65 @@
   <div class="background"></div>
   <div class="content">
     <div>
-      <h2>Welcome to the Visit India Homepage</h2>
+      <h2>Welcome to the Visit India website</h2>
       <p>Discover the rich culture, history, and beauty of India.</p>
+    </div>
+    <div>
+      <div class="suggestions" id="suggestions"></div>
+      <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for a state..." onkeyup="showSuggestions()">
+      <button onclick="searchState()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.67 16 10.5c0-2.21-1.79-4-4-4S8 8.29 8 10.5c0 1.17.59 2.09 1.41 2.72l.27.28h.79l5 4.99L20.49 19l-4.99-5zm-6 0C7 14 5 12 5 10.5S7 7 9.5 7 14 8.29 14 10.5 12 14 9.5 14z" />
+     </svg></button>
+    </div>
     </div>
   </div>
 
-  <script>
-    const stateUrls = {
-      'uttar pradesh': './popular_places/uttar-pradesh.html',
-      'maharashtra': './popular_places/maharashtra.html',
-      'bihar': './popular_places/bihar.html',
-      'west bengal': './popular_places/west-bengal.html',
-      'madhya pradesh': './popular_places/madhya-pradesh.html',
-      'tamil nadu': './popular_places/tamil-nadu.html',
-      'rajasthan': './popular_places/rajasthan.html',
-      'karnataka': './popular_places/karnataka.html',
-      'gujarat': './popular_places/gujarat.html',
-      'andhra pradesh': './popular_places/andhra-pradesh.html',
-      'odisha': './popular_places/odisha.html',
-      'telangana': './popular_places/telangana.html',
-      'kerala': './popular_places/kerala.html',
-      'jharkhand': './popular_places/jharkhand.html',
-      'assam': './popular_places/assam.html',
-      'punjab': './popular_places/punjab.html',
-      'chhattisgarh': './popular_places/chhattisgarh.html',
-      'haryana': './popular_places/haryana.html',
-      'jammu and kashmir': './popular_places/jammu-kashmir.html',
-      'uttarakhand': './popular_places/uttarakhand.html',
-      'himachal pradesh': './popular_places/himachal-pradesh.html',
-      'tripura': './popular_places/tripura.html',
-      'meghalaya': './popular_places/meghalaya.html',
-      'manipur': './popular_places/manipur.html',
-      'nagaland': './popular_places/nagaland.html',
-      'goa': './popular_places/goa.html',
-      'arunachal pradesh': './popular_places/arunachal-pradesh.html',
-      'mizoram': './popular_places/mizoram.html',
-      'sikkim': './popular_places/sikkim.html',
-      'delhi': './popular_places/delhi.html',
-      'puducherry': './popular_places/puducherry.html',
-      'chandigarh': './popular_places/chandigarh.html',
-      'andaman and nicobar islands': './popular_places/andaman-nicobar.html',
-      'dadra and nagar haveli': './popular_places/dadra-nagar-haveli.html',
-      'daman and diu': './popular_places/daman-diu.html',
-      'lakshadweep': './popular_places/lakshadweep.html'
-    };
+  <section id="home">
+    <h3>About Visit India</h3>
+    <p>
+      Welcome to "Visit India," your ultimate guide to exploring the rich cultural heritage, diverse traditions, and
+      culinary delights of India. Our website is dedicated to providing comprehensive information about the vibrant
+      cultures, traditional food items, and the best accommodations available across this incredible country. Whether
+      you're a traveler planning your next adventure, a food enthusiast eager to explore regional cuisines, or simply
+      curious about India's diverse traditions, "Visit India" is your go-to resource.
+    </p>
+    <br><br><br>
+    <h4>Discover India’s Cultural Tapestry</h4>
+    <p>
+      India is a land of incredible diversity, with each state offering its unique blend of languages, customs,
+      festivals, and art forms. From the colorful festivals of Rajasthan to the classical dance forms of Kerala, our
+      website offers detailed insights into the various cultural practices that make India a mosaic of traditions. We
+      provide in-depth articles, videos, and photo galleries that explore everything from the ancient practices of yoga
+      and meditation to the contemporary art and music scenes thriving in urban centers.
+    </p>
+    <p>
+      Our platform is designed to help you navigate through the rich cultural landscapes of India. Whether you're
+      interested in the intricate handlooms of Varanasi, the tribal art of Madhya Pradesh, or the spiritual rituals of
+      Varanasi, we have curated content that captures the essence of India’s cultural diversity. Additionally, our
+      culture section includes information on regional festivals, traditional attire, and the history behind India’s
+      many monuments and heritage sites.
+    </p>
+    <br><br><br>
+    <h4>Savor the Flavors of India</h4>
+    <p>
+      India’s cuisine is as diverse as its culture, with each region offering a unique culinary experience. "Visit
+      India" takes you on a gastronomic journey through the country, showcasing traditional food items that have been
+      passed down through generations. From the spicy street food of Mumbai to the royal dishes of Lucknow, we cover a
+      wide range of culinary delights that cater to every palate. Our food section features authentic recipes,
+      restaurant recommendations, and stories behind India’s famous dishes. Whether you're a fan of the fiery curries of
+      the South or the sweet treats of the North, our website has something for every food lover.
+    </p>
+    <p>
+      We also provide information on food festivals, local eateries, and gourmet experiences that allow you to indulge
+      in the flavors of India. Our goal is to help you discover the hidden gems of Indian cuisine and experience the
+      true taste of the country. Additionally, we highlight the best places to stay, from luxury hotels to
+      budget-friendly accommodations, ensuring that you have a comfortable and memorable stay in India.
+    </p>
+    <br><br><br>
+  </section>
 
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('dropdownMenu').classList.toggle('show');
-    });
-
-    function searchState() {
-      const state = document.getElementById('searchInput').value.trim().toLowerCase();
-      const url = stateUrls[state];
-      if (url) {
-        window.location.href = url;
-      } else {
-        alert('State not found');
-      }
-    }
-
-    function showSuggestions() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const suggestions = document.getElementById('suggestions');
-      suggestions.innerHTML = '';
-
-      if (input) {
-        const filteredStates = Object.keys(stateUrls).filter(state => state.startsWith(input));
-        filteredStates.forEach(state => {
-          const div = document.createElement('div');
-          div.classList.add('suggestion-item');
-          div.textContent = state;
-          div.onclick = () => {
-            document.getElementById('searchInput').value = state;
-            suggestions.innerHTML = '';
-            searchState();
-          };
-          suggestions.appendChild(div);
-        });
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>

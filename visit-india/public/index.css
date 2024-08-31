@@ -34,14 +34,13 @@ header h1 {
   font-size: 1.8em;
 }
 
-/* General styling for the select dropdown */
 #state-select {
   width: 200px;
   padding: 8px 12px;
   font-size: 16px;
   border-radius: 50px;
-  border: 1px solid #d50808;
-  background-color: #463d3d;
+  border: 1px solid #939493;
+  background-color: #2d2c2c;
   color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease;
@@ -52,8 +51,9 @@ header h1 {
 
 #state-select:focus {
   border-radius: 50px;
-  border-color: #007bff; /* Change this to your desired focus color */
+  border-color: #007bff; 
   outline: none;
+  transition:border-color 0.3s;
 }
 
 #state-select option {
@@ -200,7 +200,7 @@ nav ul li a:hover {
 }
 
 .suggestions {
-  margin-top: 70px;
+  margin-top: 10px;
   position: absolute;
   padding-top: 0px;
   background: #333;
@@ -220,7 +220,9 @@ nav ul li a:hover {
 }
 
 .suggestion-item:hover {
-  background: #6c3772;
+  background: #857787;
+  border-radius: 50px;
+  color: #d50808;
 }
 
 .background {

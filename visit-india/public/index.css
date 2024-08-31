@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  margin-top: 60px;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
   color: #fff;
@@ -44,8 +45,8 @@ header h1 {
   color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease;
-  position: absolute;
-  top: 70px; /* Adjust this based on the height of the header */
+  position:absolute;
+  top: 70px;
   right: 20px;
 }
 
